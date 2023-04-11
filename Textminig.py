@@ -24,6 +24,7 @@ class Textmining():
         self.supply = "주문"
         return
 
+    # 형태소 분석하여 알고리즘 실행
     def TextClassification(self):
         for i in self.tagging:
             if i == 'EOS' : continue    #문장이 끝나면 건너뛰기 
@@ -31,12 +32,24 @@ class Textmining():
         print(self.sy)
 
         if self.recommend in self.sy:
+            Tm.Count_RecommendMenu()
             print('추천메뉴list 제공')
 
         if self.supply in self.sy:
+            Tm.Text_RecommendMenu()
             print('메뉴list 제공')
         #print(self.sy)
-        
+
+ 
+    # 판매량 기반 메뉴추천 알고리즘
+    def Count_RecommendMenu(self):
+        print('판매량 기반 추천메뉴 알고리즘')
+
+
+    # 명령어 기반 메뉴추천 알고리즘
+    def Text_RecommendMenu(self):
+        print('명령어 기반 추천메뉴 알고리즘')
+
 
 
 if __name__ == '__main__':
