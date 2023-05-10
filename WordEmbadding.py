@@ -43,11 +43,11 @@ class Textmining():
             temp_X = [word for word in temp_X if not word in self.stopwords]
             self.tokenized_data.append(temp_X)
 
-            ## 형태소 분리된 문장 전부출력
-            #print(self.tokenized_data[:10])
+        ## 형태소 분리된 문장 전부출력
+        print(self.tokenized_data[:])
 
         ## 형태소 분리된 문장 일부출력 
-        print(self.tokenized_data[:5])
+        #print(self.tokenized_data[:5])
 
         # Word2Vec 훈련
         model = Word2Vec(sentences = self.tokenized_data, size = 100, window = 3, min_count = 3, workers = 4, sg = 1)
@@ -87,7 +87,8 @@ class Textmining():
 
     # 모델 저장
     def save_model(self):
-        self.model.wv.save_word2vec_format('cafe_data')
+        #self.model.wv.save_word2vec_format('cafe_data')
+        print(self.model.wv.most_similar("따뜻하다")) #단어를 여러개 넣어도 됨
         return
 
 
